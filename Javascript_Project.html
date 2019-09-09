@@ -1,0 +1,172 @@
+<!DOCTYPE >
+
+<html>
+
+<head>
+	<title>Welcome to the Computer Store.</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<body style="background-color:pink;">
+	
+	<script type = "text/javascript">
+		
+	<!--document.writeIn("<h1>Here on this page you can only find the most rare computer parts! but be aware they are expensive..</h1>");  //-->
+	</script>
+</head>
+
+<body>
+	<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="Page2.html">About Me</a></li>
+  <li><a href="Page3.html">Story Time</a></li>
+  <li><a href="Javascript_Project.html">JavaScript Project</a></li>
+
+</ul>
+	
+<div id="container">
+	<div class="panel">
+		<h2>Welcome to the Computer Store. <br> Using JavaScript Programming!</h2>
+		<h3>In this page, you can search for exclusive,limited edition Computer equipment! Some of these parts could only be found here.</h3>
+<button> PURCHASE </button>
+</div>
+
+<html>
+<html>
+<head>
+	<script language=JavaScript>
+		var CompItems = new Array();
+		CompItems[100] = 1,799;
+		CompItems[101] = 1,499;
+		CompItems[102] = 1,199;
+		CompItems[200] = 1,049;
+		CompItems[201] = 2,499;
+		CompItems[202] = 899;
+		CompItems[300] = 970;
+		CompItems[301] = 855;
+		CompItems[302] = 750;
+		CompItems[400] = 1,110;
+		CompItems[401] = 1,299;
+		CompItems[402] = 2,100;
+		CompItems[500] = 999;
+		CompItems[501] = 859;
+		CompItems[502] = 1,399;
+		CompItems[600] = 799;
+		function updateOrderDetails(){
+			const TAX = 0.115;
+			var totalTaxIncluded;
+			var total = 0;
+			var orderDetails = "";
+			var formElement;
+			formElement = document.form1.cboProcessor[document.form1.cboProcessor.selectedIndex];
+			totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+			total = parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			orderDetails = "Processor: " + formElement.text;
+			orderDetails = orderDetails + " $" + CompItems[formElement.value] + "\n";
+			formElement = document.form1.cboHardDrive[document.form1.cboHardDrive.selectedIndex];
+			totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+			total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			orderDetails = orderDetails + "Hard Drive : $" + CompItems[formElement.value] + "\n";
+			formElement = document.form1.chkCDROM
+			if (formElement.checked == true) {
+				orderDetails = orderDetails + "CD-ROM : $" + CompItems[formElement.value] + "\n";
+				totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+				total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			}
+			formElement = document.form1.chkDVD
+			if (formElement.checked == true) {
+				orderDetails = orderDetails + "DVD-ROM : $" + CompItems[formElement.value] + "\n";
+				totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+				total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			}
+			formElement = document.form1.chkScanner
+			if (formElement.checked == true) {
+				orderDetails = orderDetails + "Scanner : $" + CompItems[formElement.value] + "\n";
+				totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+				total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			}
+			formElement = document.form1.cboRAM[document.form1.cboRAM.selectedIndex];
+			totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+			total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			orderDetails = orderDetails + "RAM : $" + CompItems[formElement.value] + "\n";
+			formElement = document.form1.chkWindowsOS
+			if (formElement.checked == true) {
+				orderDetails = orderDetails + "Windows OS : $" + CompItems[formElement.value] + "\n";
+				totalTaxIncluded = parseFloat(CompItems[formElement.value]) * TAX;
+				total = total + parseFloat(CompItems[formElement.value]) + totalTaxIncluded;
+			}
+			
+			orderDetails = orderDetails + "\n\nTotal Order Cost is $" + total;
+			document.form1.txtOrder.value = orderDetails;
+		}
+	</script>
+</head>
+
+<body>
+	<form name=form1>
+	<table>
+		<tr>
+			<td width = 300>
+				Processor
+				<br>
+				<select name=cboProcessor>
+					<option value=100>Intel Core i9-9900K with 3.6Ghz Base Clock, 5.0Ghz of Boost Clock </option>
+					<option value=102>AMD Ryzen 9 3900X with Base Clock 3.8GHz, Boost Clock of 4.6GHz</option>
+					<option value=101>AMD Ryzen 5 2600X with Base Clock 3.6GHz, Boost Clock of 4.32GHz</option>
+					<option value=300>Intel Core i9-9980XE with Base Clock 3.0GHz, Boost Clock of 4.4GHz</option>
+				</select>
+				<br><br>
+				Hard Drive
+				<br>
+				<select name=cboHardDrive>
+					<option value=201>Buffalo MiniStation Extreme NFC 2TB of memory</option>
+					<option value=402>Western Digital My Passport Ultra 4TB of memory</option>
+					<option value=502>Adata SD700 External SSD</option>
+				</select>
+				<br><br>
+				
+				RAM
+				<select name="cboRAM">
+					<option value="500">Corsair Vengeance LPX, Capacity 4-128GB</option>
+					<option value="300">Kingston HyperX Predator Black, Capacity is 8-128GB</option>
+					<option value="400">CORSAIR Vengeance RGB PRO, Capacity is 16-128GB</option>
+				</select>
+				<br><br>
+				
+				CD-ROM
+				<input type="checkbox" name="chkCDROM" value="300">
+				<br>
+				DVD-ROM
+				<input type="checkbox" name="chkDVD" value="301">
+				<br>
+				Scanner
+				<input type="checkbox" name="chkScanner" value="302">
+				<br>
+				
+				Operating Systems
+				<input type="radio" name="chkWindowsOS" value="600">
+				<br>
+				<p>
+				<input type="button" value="Checkout" name="butUpdate" onclick="updateOrderDetails()">
+				</p>
+				
+				<br>
+				
+				
+			</td>
+			<td>
+				<textarea rows="20" cols="35" id="txtOrder" name="txtOrder"></textarea>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+</body>
+
+</html>
+
+
+
+
+
+</body> 
+</html>
